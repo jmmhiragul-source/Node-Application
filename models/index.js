@@ -1,6 +1,6 @@
 const { Sequelize } = require('sequelize');
 
-const sequelize = new Sequelize('mysql', 'admin', '12345678', {
+const sequelize = new Sequelize('my_auth_app', 'admin', '12345678', {
   host: 'database-1.ctogw60a0eux.ap-southeast-2.rds.amazonaws.com',
   dialect: 'mysql',
   port: 3306,
