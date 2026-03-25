@@ -1,6 +1,3 @@
-if (process.env.NODE_ENV !== 'production') {
-  require('dotenv').config();
-}
 const express = require('express');
 const bodyParser = require('body-parser');
 const { sequelize } = require('./models');
@@ -11,7 +8,7 @@ app.use(bodyParser.json());
 
 app.use('/api', indexRoute);
 
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
 
 sequelize.sync().then(() => {
   console.log('Database synced');

@@ -51,10 +51,10 @@ module.exports = {
             }
 
             // Generate new token
-            const jwtExpiresIn = process.env.JWT_EXPIRES_IN || '1h';
+            const jwtExpiresIn = '1m';
             const newToken = jwt.sign(
-                { id: user.id }, 
-                process.env.JWT_SECRET || 'secretkey', 
+                { id: user.id },
+                'your-secret-key-change-this-in-production',
                 { expiresIn: jwtExpiresIn }
             );
             

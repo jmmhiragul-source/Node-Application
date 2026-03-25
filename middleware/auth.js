@@ -13,7 +13,7 @@ const authWithExpiredToken = async (req, res, next) => {
     // Decode without verification first to check expiration
     let decoded;
     try {
-      decoded = jwt.verify(token, process.env.JWT_SECRET || 'secretkey');
+      decoded = jwt.verify(token, 'your-secret-key-change-this-in-production');
     } catch (verifyErr) {
       // If token is expired, decode without verification to get user info
       if (verifyErr.name === 'TokenExpiredError') {
@@ -66,7 +66,7 @@ const auth = async (req, res, next) => {
 
   const token = authHeader.split(' ')[1];
   try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET || 'secretkey');
+    const decoded = jwt.verify(token, 'your-secret-key-change-this-in-production');
 
     // User.findByPk is an operation
     const user = await User.findByPk(decoded.id);

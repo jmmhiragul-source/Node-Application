@@ -1,17 +1,9 @@
-if (process.env.NODE_ENV !== 'production') {
-  require('dotenv').config();
-}
 const { Sequelize } = require('sequelize');
 
-const sequelize = new Sequelize(
-  process.env.DB_NAME || 'my_auth_app',
-  process.env.DB_USER || 'root',
-  process.env.DB_PASSWORD || '',
-  {
-    host: process.env.DB_HOST || 'localhost',
-    dialect: process.env.DB_DIALECT || 'mysql',
-  }
-);
+const sequelize = new Sequelize('my_auth_app', 'root', '12345678', {
+  host: 'localhost',
+  dialect: 'mysql',
+});
 
 const User = require('./user')(sequelize);
 const Profile = require('./profile')(sequelize);
