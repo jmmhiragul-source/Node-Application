@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docker:rds": "docker compose up --build",
+    "docker:local": "APP_ENV=.env.local docker compose --profile local up --build",
+    "docker:down": "docker compose --profile local down"
   },
   "keywords": [],
   "author": "",

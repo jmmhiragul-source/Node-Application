@@ -1,0 +1,3 @@
+npm run docker:rds      # → connects to AWS RDS (uses .env)
+npm run docker:local    # → connects to local MySQL container (uses .env.local)
+npm run docker:down     # → stop everything

@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const { sequelize } = require('./models');
@@ -8,7 +10,7 @@ app.use(bodyParser.json());
 
 app.use('/api', indexRoute);
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 sequelize.sync().then(() => {
   console.log('Database synced');
